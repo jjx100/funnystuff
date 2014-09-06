@@ -1,0 +1,36 @@
+#!/usr/bin/python
+from __future__ import division
+from __future__ import absolute_import
+from __future__ import print_function
+#from __future__ import unicode_literals
+
+import argparse, os, sys
+from repo.dbUtility import DBUtility
+from repo.mysqlUtility import MysqlUtility
+from repo.verticaUtility import VerticaUtility
+
+#Main
+seapilot_home = os.getenv('SEAPILOT_HOME')
+if seapilot_home is None:
+    print('SEAPILOT_HOME is not set. Please source ./spenv.sh and rerun the script.')
+    sys.exit(1)
+
+mysql = MysqlUtility()
+vertica = VerticaUtility()
+
+DBs = [mysql, vertica]
+
+parser = argparse.ArgumentParser(description='Supported database: Mysql. Planed: Vertica.')
+parser.add_argument('--version', action='version', version='VERSION: 0.1')
+subparsers = parser.add_subparsers(dest='subparser_name', help='sub-command help')
+
+
+for x in DBs:
+    x.addOption(subparsers)    
+
+args = parser.parse_args()
+
+for x in DBs:
+    if args.subparser_name == x.name:
+        x.getOption(args)
+        x.run()
