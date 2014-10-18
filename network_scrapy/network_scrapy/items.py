@@ -8,7 +8,9 @@
 import scrapy
 
 
-class NetworkScrapyItem(scrapy.Item):
+class CnbetaItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    uid = scrapy.Field()
+    title = scrapy.Field()
+    introduction = scrapy.Field()
+    content = scrapy.Field()
