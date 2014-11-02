@@ -12,5 +12,8 @@ class CnbetaItem(scrapy.Item):
     # define the fields for your item here like:
     uid = scrapy.Field()
     title = scrapy.Field()
+    publish_date = scrapy.Field()
     introduction = scrapy.Field()
     content = scrapy.Field()
+    token = scrapy.Field()
+    SN = scrapy.Field()

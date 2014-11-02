@@ -18,3 +18,7 @@ DOWNLOAD_DELAY = 0.25
 RANDOMIZE_DOWNLOAD_DELAY = True
 USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36'
 
+ITEM_PIPELINES = {
+    'network_scrapy.pipelines.CnbetaPipeline': 300
+}
+

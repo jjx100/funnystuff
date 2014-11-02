@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Start setting up Linux basic tools"
+#install Linux basic tools
 apt-get install konsole
 apt-get install g++
 apt-get install dos2unix
@@ -16,3 +16,5 @@ apt-get update && apt-get install scrapy-0.24
 apt-get install git
 git config --global core.editor vi
 
+#install python library
+apt-get install python-pyodbc

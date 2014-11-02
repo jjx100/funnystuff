@@ -11,7 +11,7 @@ from StringIO import StringIO
 
 class CNbeta_spider:
     def __init__(self):
-        self.url = 'http://www.cnbeta.com'
+        self.url = 'http://www.cnbeta.com/articles/338665.htm'
         
     def setHeader(self, referer):
         self.headers = {
