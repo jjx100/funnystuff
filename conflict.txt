@@ -1,0 +1,14 @@
+#I added some comments here
+
+
+from __future__ import division
+from __future__ import absolute_import
+from __future__ import print_function
+#from __future__ import unicode_literals
+
+from scrapy.exceptions import DropItem
+
+class CnbetaPipeline(object):
+    def process_item(self, item, spider):
+        print('cnbeta pipeline reached')
+        return DropItem('Stop processing.')
