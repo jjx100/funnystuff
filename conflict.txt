@@ -11,4 +11,4 @@ from scrapy.exceptions import DropItem
 class CnbetaPipeline(object):
     def process_item(self, item, spider):
         print('cnbeta pipeline reached')
-        return DropItem('Stop processing.')
+        return DropItem('Stop proxxxxxxxxxcessing.
