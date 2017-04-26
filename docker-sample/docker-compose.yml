@@ -1,0 +1,11 @@
+sample:
+  build: .
+  command: bash /docker/start.sh
+  ports:
+    - "80:80"
+    - "443:443"
+    - "1235:1234"
+  volumes:
+    - ./:/docker/
+  environment:
+    - SAMPLE_ENV=sample
